@@ -1,0 +1,29 @@
+<%= form_for(@echantillon) do |f| %>
+  <% if @echantillon.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@echantillon.errors.count, "error") %> prohibited this echantillon from being saved:</h2>
+
+      <ul>
+      <% @echantillon.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :categorie_id %><br>
+    <%= f.number_field :categorie_id %>
+  </div>
+  <div class="field">
+    <%= f.label :urne_id %><br>
+    <%= f.number_field :urne_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

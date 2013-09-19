@@ -1,0 +1,37 @@
+<%= form_for(@urne) do |f| %>
+  <% if @urne.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@urne.errors.count, "error") %> prohibited this urne from being saved:</h2>
+
+      <ul>
+      <% @urne.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :width %><br>
+    <%= f.number_field :width %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br>
+    <%= f.number_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :top %><br>
+    <%= f.number_field :top %>
+  </div>
+  <div class="field">
+    <%= f.label :left %><br>
+    <%= f.number_field :left %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

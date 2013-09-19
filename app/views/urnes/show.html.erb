@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @urne.title %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @urne.width %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @urne.height %>
+</p>
+
+<p>
+  <strong>Top:</strong>
+  <%= @urne.top %>
+</p>
+
+<p>
+  <strong>Left:</strong>
+  <%= @urne.left %>
+</p>
+
+<%= link_to 'Edit', edit_urne_path(@urne) %> |
+<%= link_to 'Back', urnes_path %>

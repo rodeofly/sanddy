@@ -1,0 +1,2 @@
+module EchantillonsHelper
+end

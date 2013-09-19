@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @echantillon.title %>
+</p>
+
+<p>
+  <strong>Categorie:</strong>
+  <%= @echantillon.categorie_id %>
+</p>
+
+<p>
+  <strong>Urne:</strong>
+  <%= @echantillon.urne_id %>
+</p>
+
+<%= link_to 'Edit', edit_echantillon_path(@echantillon) %> |
+<%= link_to 'Back', echantillons_path %>
