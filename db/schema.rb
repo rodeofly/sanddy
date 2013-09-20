@@ -11,7 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130920060133) do
+ActiveRecord::Schema.define(version: 20130920062322) do
+
+  create_table "elements", force: true do |t|
+    t.string   "name"
+    t.integer  "width"
+    t.integer  "height"
+    t.integer  "top"
+    t.integer  "left"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "elements_ensembles", id: false, force: true do |t|
+    t.integer "element_id",  null: false
+    t.integer "ensemble_id", null: false
+  end
+
+  add_index "elements_ensembles", ["element_id", "ensemble_id"], name: "index_elements_ensembles_on_element_id_and_ensemble_id"
+  add_index "elements_ensembles", ["ensemble_id", "element_id"], name: "index_elements_ensembles_on_ensemble_id_and_element_id"
+
+  create_table "ensembles", force: true do |t|
+    t.string   "name"
+    t.integer  "width"
+    t.integer  "height"
+    t.integer  "top"
+    t.integer  "left"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "rails_admin_histories", force: true do |t|
     t.text     "message"
