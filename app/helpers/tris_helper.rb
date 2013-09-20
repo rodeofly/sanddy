@@ -1,2 +1,0 @@
-module TrisHelper
-end

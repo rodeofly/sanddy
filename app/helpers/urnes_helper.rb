@@ -1,2 +1,0 @@
-module UrnesHelper
-end
