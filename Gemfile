@@ -46,6 +46,6 @@ end
 
 gem 'rails_admin'
 gem 'jquery-ui-rails'
-gem "paperclip", "3.4.2"
+gem "carrierwave"
 gem "devise"
 gem "protected_attributes"

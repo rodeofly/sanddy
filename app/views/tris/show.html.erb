@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @tri.title %>
+</p>
+
+<p>
+  <strong>Urne:</strong>
+  <%= @tri.urne_id %>
+</p>
+
+<%= link_to 'Edit', edit_tri_path(@tri) %> |
+<%= link_to 'Back', tris_path %>
