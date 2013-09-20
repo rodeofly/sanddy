@@ -1,0 +1,35 @@
+<h1>Listing elements</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Width</th>
+      <th>Height</th>
+      <th>Top</th>
+      <th>Left</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @elements.each do |element| %>
+      <tr>
+        <td><%= element.name %></td>
+        <td><%= element.width %></td>
+        <td><%= element.height %></td>
+        <td><%= element.top %></td>
+        <td><%= element.left %></td>
+        <td><%= link_to 'Show', element %></td>
+        <td><%= link_to 'Edit', edit_element_path(element) %></td>
+        <td><%= link_to 'Destroy', element, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Element', new_element_path %>

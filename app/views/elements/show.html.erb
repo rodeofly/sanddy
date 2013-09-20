@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @element.name %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @element.width %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @element.height %>
+</p>
+
+<p>
+  <strong>Top:</strong>
+  <%= @element.top %>
+</p>
+
+<p>
+  <strong>Left:</strong>
+  <%= @element.left %>
+</p>
+
+<%= link_to 'Edit', edit_element_path(@element) %> |
+<%= link_to 'Back', elements_path %>

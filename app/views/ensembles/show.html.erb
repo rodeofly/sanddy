@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ensemble.name %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @ensemble.width %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @ensemble.height %>
+</p>
+
+<p>
+  <strong>Top:</strong>
+  <%= @ensemble.top %>
+</p>
+
+<p>
+  <strong>Left:</strong>
+  <%= @ensemble.left %>
+</p>
+
+<%= link_to 'Edit', edit_ensemble_path(@ensemble) %> |
+<%= link_to 'Back', ensembles_path %>
