@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130920062322) do
+ActiveRecord::Schema.define(version: 20130920134712) do
 
   create_table "elements", force: true do |t|
     t.string   "name"
@@ -32,6 +32,24 @@ ActiveRecord::Schema.define(version: 20130920062322) do
   add_index "elements_ensembles", ["ensemble_id", "element_id"], name: "index_elements_ensembles_on_ensemble_id_and_element_id"
 
   create_table "ensembles", force: true do |t|
+    t.string   "name"
+    t.integer  "width"
+    t.integer  "height"
+    t.integer  "top"
+    t.integer  "left"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "ensembles_espaces", id: false, force: true do |t|
+    t.integer "ensemble_id", null: false
+    t.integer "espace_id",   null: false
+  end
+
+  add_index "ensembles_espaces", ["ensemble_id", "espace_id"], name: "index_ensembles_espaces_on_ensemble_id_and_espace_id"
+  add_index "ensembles_espaces", ["espace_id", "ensemble_id"], name: "index_ensembles_espaces_on_espace_id_and_ensemble_id"
+
+  create_table "espaces", force: true do |t|
     t.string   "name"
     t.integer  "width"
     t.integer  "height"

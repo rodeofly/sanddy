@@ -1,0 +1,35 @@
+<h1>Listing espaces</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Width</th>
+      <th>Height</th>
+      <th>Top</th>
+      <th>Left</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @espaces.each do |espace| %>
+      <tr>
+        <td><%= espace.name %></td>
+        <td><%= espace.width %></td>
+        <td><%= espace.height %></td>
+        <td><%= espace.top %></td>
+        <td><%= espace.left %></td>
+        <td><%= link_to 'Show', espace %></td>
+        <td><%= link_to 'Edit', edit_espace_path(espace) %></td>
+        <td><%= link_to 'Destroy', espace, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Espace', new_espace_path %>

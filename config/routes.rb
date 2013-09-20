@@ -1,4 +1,6 @@
 Sanddy::Application.routes.draw do
+  resources :espaces
+
   resources :ensembles
 
   resources :elements
