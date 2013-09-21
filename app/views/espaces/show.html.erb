@@ -1,24 +1,25 @@
+
 <div id="admin_panel">
 	<div id="create"><h1>Créer</h1>
 		<%= link_to "create ensemble", new_ensemble_path, :method => :create, :confirm => "Are you sure?" %>
 
-    	<button>Nouvelle Catégorie</button>
     </div>
 </div>
 
-<div id="espace" class="sortable" style="float:left;width:<%= @espace.width %>px;height : <%= @espace.height %>px;background-image : url(<%= @espace.avatar.url %>)">>
+<div id="espace" class="sortable" style="width:<%= @espace.width %>px; height:<%= @espace.height %>px;background-image : url(<%= @espace.avatar.url %>)">
   <% @espace.ensembles.each do |ensemble| %>
-      <div id=ensemble_<%= ensemble.id %>" class="categorie droppable resizable" style="float:left;width:<%= ensemble.width %>px;height : <%= ensemble.height %>px;background-image : url()">
-		    <h1><%= ensemble.name %></h1>
-              <% ensemble.elements.each do |element| %>
-		        <div
-		            class="element draggable" 
-		            style="width:<%= element.width %>px;height : <%= element.height %>px;background-image : url() %>)">
-		            <%= element.name %>
-		        </div>
-	      <% end %>
-	    <% end %>
+      <div id="ensemble_<%= ensemble.id %>" class="categorie droppable resizable"
+      	
+      	style="width:<%= ensemble.width %>px; height:<%= ensemble.height %>px; background-image : url(<%= ensemble.avatar.url %>)">
+          <h1><%= ensemble.name %></h1>
+            <% ensemble.elements.each do |element| %>
+		      <div class="element draggable" style="width:<%= element.width %>px; height:<%= element.height %>px; background-image : url(<%= element.avatar.url %>)">
+		        <%= element.name %>
+		      </div>
+	        <% end %>
 	</div>
+  <% end %>
+	<button id="button">Toggle</button>
 	
 
 
@@ -28,35 +29,6 @@
 
 
 
-
-
-
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @espace.name %>
-</p>
-
-<p>
-  <strong>Width:</strong>
-  <%= @espace.width %>
-</p>
-
-<p>
-  <strong>Height:</strong>
-  <%= @espace.height %>
-</p>
-
-<p>
-  <strong>Top:</strong>
-  <%= @espace.top %>
-</p>
-
-<p>
-  <strong>Left:</strong>
-  <%= @espace.left %>
-</p>
 
 <%= link_to 'Edit', edit_espace_path(@espace) %> |
 <%= link_to 'Back', espaces_path %>

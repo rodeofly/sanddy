@@ -180,6 +180,7 @@ DEPENDENCIES
   devise
   jbuilder (~> 1.2)
   jquery-rails
+  jquery-ui-rails
   mini_magick
   paperclip
   rails (= 4.0.0)
