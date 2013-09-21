@@ -46,3 +46,5 @@ end
 gem "rails_admin"
 gem "devise"  
 gem "paperclip"
+gem "carrierwave"
+gem "mini_magick"

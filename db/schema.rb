@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130920134712) do
+ActiveRecord::Schema.define(version: 20130920143730) do
 
   create_table "elements", force: true do |t|
     t.string   "name"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20130920134712) do
     t.integer  "left"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar"
   end
 
   create_table "elements_ensembles", id: false, force: true do |t|
@@ -39,6 +40,7 @@ ActiveRecord::Schema.define(version: 20130920134712) do
     t.integer  "left"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar"
   end
 
   create_table "ensembles_espaces", id: false, force: true do |t|
@@ -57,6 +59,7 @@ ActiveRecord::Schema.define(version: 20130920134712) do
     t.integer  "left"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar"
   end
 
   create_table "rails_admin_histories", force: true do |t|
@@ -85,6 +88,7 @@ ActiveRecord::Schema.define(version: 20130920134712) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "avatar"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
