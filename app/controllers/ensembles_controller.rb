@@ -25,12 +25,15 @@ class EnsemblesController < ApplicationController
   # POST /ensembles.json
   def create
     @ensemble = Ensemble.new(ensemble_params)
-
+    @ensemble.espaces << Espace.find(params[:espace_id].to_i)
     respond_to do |format|
       if @ensemble.save
+        flash[:success] = 'Ensemble created.'
+        format.js
         format.html { redirect_to @ensemble, notice: 'Ensemble was successfully created.' }
         format.json { render action: 'show', status: :created, location: @ensemble }
       else
+        format.js
         format.html { render action: 'new' }
         format.json { render json: @ensemble.errors, status: :unprocessable_entity }
       end
@@ -69,6 +72,8 @@ class EnsemblesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ensemble_params
-      params.require(:ensemble).permit(:name, :width, :height, :top, :left)
+      params.require(:ensemble).permit(:name, :width, :height, :top, :left, :espace_id)
     end
+    
+   
 end

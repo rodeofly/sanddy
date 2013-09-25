@@ -1,0 +1,23 @@
+<% @espace.ensembles.each do |ensemble| %>
+  <div id="ensemble_<%= ensemble.id %>" class="ensemble droppable resizable" style="width:<%= ensemble.width %>px; height:<%= ensemble.height %>px; background-image : url(<%= ensemble.avatar.url %>)">
+    <h1><%= ensemble.name %></h1>
+	<p>
+	<strong>Width:</strong>
+	<%= ensemble.width %>
+	<br />
+	<strong>Height:</strong>
+	<%= ensemble.height %>
+	<br />
+	<strong>Top:</strong>
+	<%= ensemble.top %>
+	<br />
+	<strong>Left:</strong>
+	<%= ensemble.left %>
+	</p>
+    <% ensemble.elements.each do |element| %>
+    <div class="element draggable" style="width:<%= element.width %>px; height:<%= element.height %>px; background-image : url(<%= element.avatar.url %>)">
+        <%= element.name %>
+    </div>
+  <% end %>
+  </div>
+<% end %>

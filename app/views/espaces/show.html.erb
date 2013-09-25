@@ -1,35 +1,11 @@
-
-<div id="admin_panel">
-	<div id="create"><h1>Créer</h1>
-		<%= link_to "create ensemble", new_ensemble_path, :method => :create, :confirm => "Are you sure?" %>
-
-    </div>
+<div id="espace" espace_id="<%= @espace.id %>" class="sortable resizable" style="width:<%= @espace.width %>px; height:<%= @espace.height %>px;background-image : url(<%= @espace.avatar.url %>)">
+      <%= render partial: "showEnsembles" %>
 </div>
 
-<div id="espace" class="sortable" style="width:<%= @espace.width %>px; height:<%= @espace.height %>px;background-image : url(<%= @espace.avatar.url %>)">
-  <% @espace.ensembles.each do |ensemble| %>
-      <div id="ensemble_<%= ensemble.id %>" class="categorie droppable resizable"
-      	
-      	style="width:<%= ensemble.width %>px; height:<%= ensemble.height %>px; background-image : url(<%= ensemble.avatar.url %>)">
-          <h1><%= ensemble.name %></h1>
-            <% ensemble.elements.each do |element| %>
-		      <div class="element draggable" style="width:<%= element.width %>px; height:<%= element.height %>px; background-image : url(<%= element.avatar.url %>)">
-		        <%= element.name %>
-		      </div>
-	        <% end %>
-	</div>
-  <% end %>
-	<button id="button">Toggle</button>
-	
-
-
-
-
-
-
-
-
-
-<%= link_to 'Edit', edit_espace_path(@espace) %> |
-<%= link_to 'Back', espaces_path %>
-
+<button id="button">Toggle</button><%= link_to 'Edit', edit_espace_path(@espace) %>|<%= link_to 'Back', espaces_path %>
+<div id="admin_panel" espace_id=<%= @espace.id %>>
+	<div id="create"><h1>Créer</h1>
+		<div id= "ensemble_errors" style="display:none"></div>
+		<%= render partial: "ensembleForm", object: @new_ensemble %>
+    </div>
+</div>

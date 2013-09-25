@@ -10,6 +10,7 @@ class EspacesController < ApplicationController
   # GET /espaces/1
   # GET /espaces/1.json
   def show
+    @ensemble = Ensemble.new
   end
 
   # GET /espaces/new
@@ -25,7 +26,6 @@ class EspacesController < ApplicationController
   # POST /espaces.json
   def create
     @espace = Espace.new(espace_params)
-
     respond_to do |format|
       if @espace.save
         format.html { redirect_to @espace, notice: 'Espace was successfully created.' }
