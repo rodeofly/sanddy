@@ -8,7 +8,7 @@ class Espace < ActiveRecord::Base
   private
 
   def update_image_attributes
-    if self.avatar.present?
+    if self.avatar.present? && (!self.width.present? || !self.height.present?)
       #self.content_type = avatar.file.content_type
       #self.file_size = avatar.file.size
       self.width, self.height = `identify -format "%wx%h" \"#{avatar.file.path}\"`.split(/x/)

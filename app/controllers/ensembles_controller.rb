@@ -59,6 +59,8 @@ class EnsemblesController < ApplicationController
   def destroy
     @ensemble.destroy
     respond_to do |format|
+      flash[:success] = 'Ensemble created.'
+      format.js
       format.html { redirect_to ensembles_url }
       format.json { head :no_content }
     end
@@ -73,6 +75,7 @@ class EnsemblesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def ensemble_params
       params.require(:ensemble).permit(:name, :width, :height, :top, :left, :espace_id)
+      
     end
     
    

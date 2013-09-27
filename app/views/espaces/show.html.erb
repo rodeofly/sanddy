@@ -1,5 +1,8 @@
 <div id="espace" espace_id="<%= @espace.id %>" class="sortable resizable" style="width:<%= @espace.width %>px; height:<%= @espace.height %>px;background-image : url(<%= @espace.avatar.url %>)">
-      <%= render partial: "showEnsembles" %>
+      
+            <%= render :partial => "showEnsembles", object: @espace %>
+      
+
 </div>
 
 <button id="button">Toggle</button><%= link_to 'Edit', edit_espace_path(@espace) %>|<%= link_to 'Back', espaces_path %>

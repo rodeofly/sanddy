@@ -1,5 +1,8 @@
 <% @espace.ensembles.each do |ensemble| %>
   <div id="ensemble_<%= ensemble.id %>" class="ensemble droppable resizable" style="width:<%= ensemble.width %>px; height:<%= ensemble.height %>px; background-image : url(<%= ensemble.avatar.url %>)">
+    <div class="destructor">
+  	  <%= button_to "delete", ensemble, :method=>:delete, :class=>:destroy, :remote=>true%>
+    </div>
     <h1><%= ensemble.name %></h1>
 	<p>
 	<strong>Width:</strong>
